@@ -3,7 +3,8 @@ package model;
 import javax.persistence.*;
 import java.math.BigInteger; 
 import java.security.MessageDigest; 
-import java.security.NoSuchAlgorithmException; 
+import java.security.NoSuchAlgorithmException;
+import java.util.Random; 
 
 
 @Entity(name = "VideoShare")
@@ -20,6 +21,8 @@ import java.security.NoSuchAlgorithmException;
 	
 })
 public class VideoShare {
+	
+	private static Random random = new Random();
 	
 	@Id
 	@GeneratedValue
@@ -97,7 +100,12 @@ public class VideoShare {
 	public VideoShare(Video frstVideo, Video secVideo, String uMsg) {
 		firstVideo = frstVideo;
 		secondVideo = secVideo;
-		hashID = firstVideo.getYoutubeID() + secondVideo.getYoutubeID() + videoShareDatabaseID;
+		
+		hashID = firstVideo.getYoutubeID() + getSHA(random.nextLong() + "MirsoRWA") + secondVideo.getYoutubeID() + random.nextLong();
+		
+		// LOG
+		System.out.println("hashID: " + hashID);
+		
 		userMessage = uMsg;
 	}
 	

@@ -58,8 +58,8 @@ public class Video {
 	
 	public Video(String youtubeID, Long posVote, Long negVote) {
 		videoYoutubeID = youtubeID;
-		videoLikes = posVote;
-		videoDislikes = negVote;
+		videoLikes = posVote < 0 ? 0 : posVote;
+		videoDislikes = negVote < 0 ? 0 : negVote;
 	}
 	
 	

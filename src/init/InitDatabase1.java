@@ -8,7 +8,7 @@ import model.VideoShare;
 
 public class InitDatabase1 {
 	
-	private static final String PERSISTENCE_UNIT_NAME = "SQL_project";
+	private static final String PERSISTENCE_UNIT_NAME = "RWA_HOMEWORK_2";
 	private static final Long MAX_VIDEO_VOTES = 10000l;
 	private static EntityManagerFactory emf;
 	private static Random random = new Random();
@@ -35,8 +35,8 @@ public class InitDatabase1 {
 		for(String videoID : videoIDs)
 		{
 			em.persist(new Video(videoID, 
-					 			 random.nextLong() % MAX_VIDEO_VOTES, 
-					 			 random.nextLong() % MAX_VIDEO_VOTES));
+					 			 Math.abs(random.nextLong() % MAX_VIDEO_VOTES), 
+					 			 Math.abs(random.nextLong() % MAX_VIDEO_VOTES)));
 		}
 		
 		

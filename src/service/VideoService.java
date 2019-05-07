@@ -1,14 +1,23 @@
 package service;
 
 import javax.persistence.*;
+import java.util.*;
+import java.util.List;
 import java.util.Random;
 import model.Video;
 import model.VideoPair;
+import model.VideoShare;
+
 
 public class VideoService {
 	
 	
 	private static Random random = new Random();
+	
+	
+	
+	
+	
 	
 	
 	public static VideoPair getNewPair()
@@ -57,6 +66,46 @@ public class VideoService {
 		}
 		
 	}
+	
+	
+	
+	
+	public static VideoShare getVideoShare(String videoShareID)
+	{
+		try {
+			
+			System.out.println("VideoShareID: " + videoShareID);
+			   
+			EntityManager em = PersistenceContextHandler.getEMF().createEntityManager();
+		
+			TypedQuery<VideoShare> getVideoShareQuery = em.createNamedQuery("VideoShare.getVideoByHashID", VideoShare.class);
+			getVideoShareQuery.setParameter("videoHashID", videoShareID);
+			List<VideoShare> videoShareList = getVideoShareQuery.getResultList();
+			
+			if(videoShareList.size() == 0)
+				return null;
+			else
+				return videoShareList.get(0);
+			
+		} catch (Throwable t) {
+			System.out.println("VideoService.getVideoShare()");
+			throw t;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	
