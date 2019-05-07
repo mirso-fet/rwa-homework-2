@@ -25,17 +25,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		-->
-
-
-	 	<!-- GOOGLE API JS -->
-		<script src="https://apis.google.com/js/api.js"></script>
-
-
-
-
-		<!-- JAVASCRIPT-->
-    	<script type="text/javascript" src="rwa.js"></script>
-
+		
 		
 		<title>VVC</title>
 
@@ -106,7 +96,7 @@
 
 
 				<!-- VIDEO 1 -->
-				<div class="col-6 p-5">
+				<div class="col-6 p-5" id="firstVideo" data="">
 
 
 					<div class="row">		
@@ -124,7 +114,7 @@
 										<div class="embed-responsive embed-responsive-16by9">
 											<iframe allowFullScreen="allowFullScreen" 
 									 src="https://www.youtube.com/embed/S-sJp1FfG7Q?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1" 
-					allowtransparency="true" frameborder="0">
+									 allowtransparency="true" frameborder="0">
 											</iframe>
 										</div>
 									</div>				
@@ -135,7 +125,7 @@
 										<div class="embed-responsive embed-responsive-16by9">
 											<iframe allowFullScreen="allowFullScreen" 
 									 src="https://www.youtube.com/embed/sRAkP9B1AJ4?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1" 
-					allowtransparency="true" frameborder="0">
+									 allowtransparency="true" frameborder="0">
 											</iframe>
 										</div>
 									</div>
@@ -176,7 +166,7 @@
 
 				<!-- VIDEO 2-->	
 
-				<div class="col-6 p-5">
+				<div class="col-6 p-5" id="secondVideo" data="">
 
 
 					<div class="row">		
@@ -516,6 +506,15 @@
 			</div>
 		</div>
 
+		<!-- MY JAVASCRIPT-->
+    	<script type="text/javascript" src="rwa.js"></script>
+
+
+	 	<!-- GOOGLE API JAVASCRIPT -->
+	 	<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  		</script> 
+
 
 	</body>
+	
 </html>
