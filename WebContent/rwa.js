@@ -152,7 +152,7 @@ function loadScript(url, callback)
 		 gapi.client.setApiKey(APIkey);
 		 gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() {
 			 //getVideoInfo(videoIDsList);
-			 getVideoPair();
+			 getNewVideoPair();
 		 });
 	  
 	 }
@@ -171,13 +171,21 @@ function loadScript(url, callback)
 		    httpRequest.send(); 
 		}
 	 
-	 function getVideoPair() {
+	 function getNewVideoPair() {
 		 fetchJSONFile("http://localhost:8080/RWA_HOMEWORK_2/GetVideoPair", function(data) {
 			 
 				var firstVideo = document.getElementById("firstVideo");
 				var secondVideo = document.getElementById("secondVideo");
 				
+				firstVideo.setAttribute("data", data.firstVideo.videoYoutubeID);
+				secondVideo.setAttribute("data", data.secondVideo.videoYoutubeID);
+				
 				var firstIframe = firstVideo.querySelector("iframe");
+				var secondIframe = secondVideo.querySelector("iframe");
+				
+				firstIframe.setAttribute("src", "https://www.youtube.com/embed/" + data.firstVideo.videoYoutubeID + "?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1");
+				secondIframe.setAttribute("src", "https://www.youtube.com/embed/" + data.secondVideo.videoYoutubeID + "?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1");
+				
 				console.log(firstIframe);
 			    console.log(data);
 			 

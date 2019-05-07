@@ -69,7 +69,7 @@
 						<!-- nav-item: class for nav-item -->
 						<li class="nav-item d-flex align-middle pt-1">
 							<!-- Font Awesome class for icons -->
-							<span class="fas fa-sync-alt fa-lg px-3 navicon navbar-fs"></span>
+							<span class="fas fa-sync-alt fa-lg px-3 navicon navbar-fs" onclick="getNewVideoPair()"></span>
 						</li>
 
 						<li class="nav-item d-flex align-middle pt-1">
@@ -113,14 +113,14 @@
 									<div class="carousel-item active">
 										<div class="embed-responsive embed-responsive-16by9">
 											<iframe allowFullScreen="allowFullScreen" 
-									 src="https://www.youtube.com/embed/S-sJp1FfG7Q?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1" 
+									 src=about:blank" 
 									 allowtransparency="true" frameborder="0">
 											</iframe>
 										</div>
 									</div>				
 
 
-
+									<!-- 
 									<div class="carousel-item">
 										<div class="embed-responsive embed-responsive-16by9">
 											<iframe allowFullScreen="allowFullScreen" 
@@ -129,6 +129,7 @@
 											</iframe>
 										</div>
 									</div>
+									-->
 
 								</div>
 							</div>
@@ -182,15 +183,17 @@
 
 									<div class="carousel-item active">
 										<div class="embed-responsive embed-responsive-16by9">
+										 
 											<iframe allowFullScreen="allowFullScreen" 
-									 src="https://www.youtube.com/embed/S-sJp1FfG7Q?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1" 
-					allowtransparency="true" frameborder="0">
+												 src="about:blank" 
+													allowtransparency="true" frameborder="0">
 											</iframe>
+											
 										</div>
 									</div>				
 
 
-
+								<!--  
 									<div class="carousel-item">
 										<div class="embed-responsive embed-responsive-16by9">
 											<iframe allowFullScreen="allowFullScreen" 
@@ -199,6 +202,7 @@
 											</iframe>
 										</div>
 									</div>
+								-->
 
 								</div>
 							</div>
