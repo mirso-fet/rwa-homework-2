@@ -143,7 +143,7 @@ function loadScript(url, callback)
 	 
 	 
 	// Load auth2 library
-	 function handleClientLoad() {
+	 function handleClientLoadNewPair() {
 	   gapi.load('client', initClient);
 	 }
 
@@ -157,6 +157,35 @@ function loadScript(url, callback)
 	  
 	 }
 	
+	 
+	 function handleClientLoadOldPair(firstVideoYTID, secondVideoYTID) {
+		 	console.log("LOADING API");
+		 	
+		 	 console.log(firstVideoYTID, "    ", secondVideoYTID);
+			 
+		 	
+		 	var initFunction = function() {
+		 		initClient2(firstVideoYTID, secondVideoYTID);
+		 		console.log(firstVideoYTID, "    ", secondVideoYTID);
+				 
+		 	}
+		 	
+		   gapi.load('client', initFunction);
+		 }
+	 
+	 function initClient2(firstVideoYTID, secondVideoYTID) {
+		 console.log(firstVideoYTID, "    ", secondVideoYTID);
+		 gapi.client.setApiKey(APIkey);
+		 gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() {
+			 //getVideoInfo(videoIDsList);
+			 getVideoPair(firstVideoYTID, secondVideoYTID);
+		 });
+	  
+	 }
+	 
+	 
+	 
+	 
 	 function fetchJSONFile(path, callback) {
 		    var httpRequest = new XMLHttpRequest();
 		    httpRequest.onreadystatechange = function() {
@@ -193,6 +222,36 @@ function loadScript(url, callback)
 		 });
 	 }
 	 
+	 
+	 function getVideoPair(firstVideoYTID, secondVideoYTID) {
+		 
+		 URL = "http://localhost:8080/RWA_HOMEWORK_2/GetVideoPair" + "?" + "firstVideoID=" + firstVideoYTID + "&" + 
+		 																   "secondVideoID=" + secondVideoYTID;
+		 
+		 console.log(firstVideoYTID, "    ", secondVideoYTID);
+		 
+		 fetchJSONFile(URL, function(data) {
+			 
+				var firstVideo = document.getElementById("firstVideo");
+				var secondVideo = document.getElementById("secondVideo");
+				
+				console.log("Data: ", data);
+				
+				firstVideo.setAttribute("data", data.firstVideo.videoYoutubeID);
+				secondVideo.setAttribute("data", data.secondVideo.videoYoutubeID);
+				
+				var firstIframe = firstVideo.querySelector("iframe");
+				var secondIframe = secondVideo.querySelector("iframe");
+				
+				firstIframe.setAttribute("src", "https://www.youtube.com/embed/" + data.firstVideo.videoYoutubeID + "?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1");
+				secondIframe.setAttribute("src", "https://www.youtube.com/embed/" + data.secondVideo.videoYoutubeID + "?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1");
+				
+				console.log(firstIframe);
+			    console.log(data);
+			 
+			 
+		 });
+	 }
 	 
 	 
 	 

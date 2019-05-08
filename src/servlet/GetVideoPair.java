@@ -34,7 +34,7 @@ public class GetVideoPair extends HttpServlet {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		if(videoPair != null)
-			response.getWriter().write(new Gson().toJson(VideoService.getNewPair()));
+			response.getWriter().write(new Gson().toJson(videoPair));
 		else
 			response.getWriter().write(new Gson().toJson("Invalid videos IDs"));
 			

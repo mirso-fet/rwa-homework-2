@@ -515,7 +515,18 @@
 
 
 	 	<!-- GOOGLE API JAVASCRIPT -->
-	 	<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	 	<script async defer src="https://apis.google.com/js/api.js" 
+	 		<% 
+	 			String firstVideoYTID = request.getParameter("firstVideoID");
+	 			String secondVideoYTID = request.getParameter("secondVideoID");
+	 			
+	 			if(firstVideoYTID == null || secondVideoYTID == null)
+	 				out.println("onload=\"this.onload=function(){};handleClientLoadNewPair()\"");
+	 			else
+	 				//out.println("onload=\"this.onload=function(){};handleClientLoadOldPair(" + firstVideoYTID + "," + secondVideoYTID + ")\"");
+	 				out.println("onload=\"this.onload=function(){};handleClientLoadOldPair(\'" + firstVideoYTID + "\',\'" + secondVideoYTID + "\')\"");
+	 		%>
+	 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
   		</script> 
 
 
