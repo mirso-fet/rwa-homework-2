@@ -67,6 +67,11 @@ public class VideoService {
 		
 	}
 	
+
+	
+	
+	
+	
 	
 	
 	
@@ -94,6 +99,49 @@ public class VideoService {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	public static VideoPair getPair(String firstVideoYTID, String secondVideoYTID)
+	{
+		try {
+	   
+			EntityManager em = PersistenceContextHandler.getEMF().createEntityManager();
+		
+		
+			TypedQuery<Video> getVideoQuery = em.createNamedQuery("Video.getVideoByYoutubeID", Video.class);
+			
+			getVideoQuery.setParameter("youtubeID", firstVideoYTID);
+			List<Video> videoList = getVideoQuery.getResultList();
+			
+			if(videoList.size() == 0)
+				return null;
+			
+			Video firstVideo = videoList.get(0);
+			
+			
+			getVideoQuery.setParameter("youtubeID", secondVideoYTID);
+			videoList = getVideoQuery.getResultList();
+			
+			if(videoList.size() == 0)
+				return null;
+			
+			Video secondVideo = videoList.get(0);
+			
+			
+			em.close();
+			
+			return new VideoPair(firstVideo, secondVideo);
+		
+		} catch (Throwable t) {
+		    System.out.println("VideoService.getNewPair()");
+		    throw t;
+		}
+		
+	}
 	
 	
 	

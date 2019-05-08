@@ -172,7 +172,7 @@ function loadScript(url, callback)
 		}
 	 
 	 function getNewVideoPair() {
-		 fetchJSONFile("http://localhost:8080/RWA_HOMEWORK_2/GetVideoPair", function(data) {
+		 fetchJSONFile("http://localhost:8080/RWA_HOMEWORK_2/GetRandomVideoPair", function(data) {
 			 
 				var firstVideo = document.getElementById("firstVideo");
 				var secondVideo = document.getElementById("secondVideo");

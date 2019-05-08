@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 
 import com.google.gson.Gson;
 import service.VideoService;
+import model.VideoPair;
 
 @WebServlet("/GetVideoPair")
 public class GetVideoPair extends HttpServlet {
@@ -19,9 +20,24 @@ public class GetVideoPair extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		String firstVideoYTID = request.getParameter("firstVideoID");
+		String secondVideoYTID = request.getParameter("secondVideoID");
+		
+		if(firstVideoYTID == null || secondVideoYTID == null)
+		{
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+			return;
+		}
+		
+		VideoPair videoPair = VideoService.getPair(firstVideoYTID, secondVideoYTID);
+		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().write(new Gson().toJson(VideoService.getNewPair()));
+		if(videoPair != null)
+			response.getWriter().write(new Gson().toJson(VideoService.getNewPair()));
+		else
+			response.getWriter().write(new Gson().toJson("Invalid videos IDs"));
+			
 	}
 	
 	
