@@ -1185,3 +1185,122 @@ div .circle-img-div2{
 }
 
 
+
+
+
+
+
+#vote-button-left-background {
+	position:relative; 
+	bottom:200%; 
+	left:0; 
+	height:100%; 
+	width:100%; 
+	background-color: #262626;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+	z-index=5;
+}
+
+#vote-button-left-text {
+	position:relative; 
+	bottom:0; 
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	z-index:20;	
+}
+
+#vote-button-left-fill-bar {	
+	position:relative; 
+	bottom:100%; 
+	left:0; 
+	width: 0%;
+	height: 100%;
+	background-color: rgba(46, 204, 113, 0.7);
+	z-index:10;
+}
+
+
+
+
+
+
+
+
+
+#vote-button-right-background {
+	position:relative; 
+	bottom:100%; 
+	left:0; 
+	height:100%; 
+	width:100%; 
+	background-color: #262626;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+	z-index=5;
+}
+
+#vote-button-right-text {
+	position:relative; 
+	bottom:0; 
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	z-index:20;
+}
+
+#vote-button-right-fill-bar {
+	position:relative; 
+	bottom:100%; 
+	left:0; 
+	height:100%; 
+	display: block;
+	float: right;
+	background-color: rgba(46, 204, 113, 0.7);
+	z-index:10;
+}
+
+
+
+
+.spin {
+	transition: 1s;
+	transition-property: transform;
+	 outline: 0;
+}
+
+.spin.activeSpin {
+  transform: rotate(360deg);
+}
+
+
+.crossRotate {
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  outline: 0;
+}
+
+.crossRotate.active {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+

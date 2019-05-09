@@ -69,7 +69,7 @@
 						<!-- nav-item: class for nav-item -->
 						<li class="nav-item d-flex align-middle pt-1">
 							<!-- Font Awesome class for icons -->
-							<span class="fas fa-sync-alt fa-lg px-3 navicon navbar-fs" onclick="getNewVideoPair()"></span>
+							<span class="fas fa-sync-alt fa-lg px-3 navicon navbar-fs spin" id="refresh-btn" onclick="rotateRefreshBtn(); getNewVideoPair(); resetButtonState()"></span>
 						</li>
 
 						<li class="nav-item d-flex align-middle pt-1">
@@ -119,26 +119,13 @@
 										</div>
 									</div>				
 
-
-									<!-- 
-									<div class="carousel-item">
-										<div class="embed-responsive embed-responsive-16by9">
-											<iframe allowFullScreen="allowFullScreen" 
-									 src="https://www.youtube.com/embed/sRAkP9B1AJ4?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1" 
-									 allowtransparency="true" frameborder="0">
-											</iframe>
-										</div>
-									</div>
-									-->
-
 								</div>
 							</div>
+						</div>
 
-							<div class="col-1"></div>
+						<div class="col-1"></div>
 
-						</div>	
-
-					</div>
+					</div>	
 
 
 					<!-- VOTE BTN LEFT -->	
@@ -146,13 +133,17 @@
 
 						<div class="col-1"></div>
 
-						<div class="col-10 text-center vote-btn-left">
+						<div class="col-10 text-center px-0" onclick="leftButtonClickAnimation()"
+															onmouseenter="leftButtonMouseEnterAnimation()"
+															onmouseleave="leftButtonMouseLeaveAnimation()">
 
-							<div class="row justify-content-center">
-								<div class="col-12">	
-									<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
-								</div>	
+							<div id="vote-button-left-text" class="justify-content-center">	
+								<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
 							</div>
+				
+							<div id="vote-button-left-fill-bar" style="width:0%"></div>
+				
+							<div id="vote-button-left-background"></div>
 
 						</div>
 
@@ -192,26 +183,13 @@
 										</div>
 									</div>				
 
-
-								<!--  
-									<div class="carousel-item">
-										<div class="embed-responsive embed-responsive-16by9">
-											<iframe allowFullScreen="allowFullScreen" 
-									 src="https://www.youtube.com/embed/sRAkP9B1AJ4?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;hd=1" 
-					allowtransparency="true" frameborder="0">
-											</iframe>
-										</div>
-									</div>
-								-->
-
 								</div>
 							</div>
+						</div>
 
-							<div class="col-1"></div>
+						<div class="col-1"></div>
 
-						</div>	
-
-					</div>
+					</div>	
 
 
 					<!-- VOTE BTN RIGHT -->		
@@ -219,13 +197,17 @@
 
 						<div class="col-1"></div>
 
-						<div class="col-10 text-center vote-btn-right">
+						<div class="col-10 text-center px-0" onclick="rightButtonClickAnimation()"
+															 onmouseenter="rightButtonMouseEnterAnimation()"
+															 onmouseleave="rightButtonMouseLeaveAnimation()">
 
-							<div class="row justify-content-center">
-								<div class="col-12">	
-									<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
-								</div>	
+							<div id="vote-button-right-text" class="justify-content-center">	
+								<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
 							</div>
+				
+							<div id="vote-button-right-fill-bar" style="width:0%"></div>
+				
+							<div id="vote-button-right-background"></div>
 
 						</div>
 

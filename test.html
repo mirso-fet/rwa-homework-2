@@ -177,8 +177,8 @@
 		<div class="col-1"></div>
 
 			<div class="col-10 text-center" onclick="leftButtonClickAnimation()"
-																			onmouseenter="leftButtonMouseEnterAnimation()"
-																			onmouseleave="leftButtonMouseLeaveAnimation()">
+											onmouseenter="leftButtonMouseEnterAnimation()"
+											onmouseleave="leftButtonMouseLeaveAnimation()">
 
 				<div id="vote-button-left-text" class="justify-content-center">	
 						<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
@@ -288,6 +288,18 @@
 	function resetLeftButtonState() {
 		leftButtonState = "none";
 		rightButtonState = "none";
+		
+		var fillbarLeft = document.getElementById("vote-button-left-fill-bar"); 
+		var textLeft =  document.getElementById("vote-button-left-text");
+		
+		var fillbarRight = document.getElementById("vote-button-right-fill-bar"); 
+		var textRight =  document.getElementById("vote-button-right-text");
+		
+		textLeft.style.color = "#ffffff";
+		textRight.style.color = "#ffffff";
+		
+		fillbarLeft.style.width = "0%";
+		fillbarRight.style.width = "0%";
 	}
 
 

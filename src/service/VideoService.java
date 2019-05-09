@@ -1,12 +1,15 @@
 package service;
 
 import javax.persistence.*;
+import javax.servlet.http.HttpServletResponse;
+
 import java.util.*;
 import java.util.List;
 import java.util.Random;
 import model.Video;
 import model.VideoPair;
 import model.VideoShare;
+import model.VotePair;
 
 
 public class VideoService {
@@ -143,6 +146,56 @@ public class VideoService {
 		
 	}
 	
+	
+	
+	public static boolean voteForVideo(VotePair votePair)
+	{
+		try {
+			   
+			EntityManager em = PersistenceContextHandler.getEMF().createEntityManager();
+		
+		
+			TypedQuery<Video> getVideoQuery = em.createNamedQuery("Video.getVideoByYoutubeID", Video.class);
+			
+			getVideoQuery.setParameter("youtubeID", votePair.likedVideoID);
+			List<Video> videoList = getVideoQuery.getResultList();
+			
+			if(videoList.size() == 0)
+				return false;
+			
+			Video likedVideo = videoList.get(0);
+			
+			
+			getVideoQuery.setParameter("youtubeID", votePair.dislikedVideoID);
+			videoList = getVideoQuery.getResultList();
+			
+			if(videoList.size() == 0)
+				return false;
+			
+			Video dislikedVideo = videoList.get(0);
+			
+			likedVideo.positiveVote();
+			dislikedVideo.negativeVote();
+			
+			em.getTransaction().begin();
+			
+			em.persist(likedVideo);
+			em.persist(dislikedVideo);
+			
+			em.getTransaction().commit();
+			
+			
+			
+			em.close();
+			
+			return true;
+		
+		} catch (Throwable t) {
+		    System.out.println("VideoService.voteForVideo()");
+		    throw t;
+		}
+		
+	}
 	
 	
 	
