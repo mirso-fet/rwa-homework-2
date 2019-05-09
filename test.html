@@ -27,27 +27,86 @@
   color: white;
 }
 
-.vote-button-background {
-	width: 100%;
-	height: 100%;
+
+#vote-button-left-background {
+	position:relative; 
+	bottom:200%; 
+	left:0; 
+	height:100%; 
+	width:100%; 
 	background-color: #262626;
 	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+	z-index=5;
 }
 
 #vote-button-left-text {
+	position:relative; 
+	bottom:0; 
+	left:0;
 	width: 100%;
 	height: 100%;
 	background-color: transparent;
 	color: #ffffff;
 	text-decoration: none;
 	text-transform: uppercase;
+	z-index:20;	
 }
 
-#vote-button-left-fill-bar {
-	width: 10%;
+#vote-button-left-fill-bar {	
+	position:relative; 
+	bottom:100%; 
+	left:0; 
+	width: 0%;
 	height: 100%;
 	background-color: rgba(46, 204, 113, 0.7);
+	z-index:10;
 }
+
+
+
+
+
+
+
+
+
+#vote-button-right-background {
+	position:relative; 
+	bottom:100%; 
+	left:0; 
+	height:100%; 
+	width:100%; 
+	background-color: #262626;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+	z-index=5;
+}
+
+#vote-button-right-text {
+	position:relative; 
+	bottom:0; 
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	z-index:20;
+}
+
+#vote-button-right-fill-bar {
+	position:relative; 
+	bottom:100%; 
+	left:0; 
+	height:100%; 
+	display: block;
+	float: right;
+	background-color: rgba(46, 204, 113, 0.7);
+	z-index:10;
+}
+
+
+
 
 
 .vote-btn-left {
@@ -117,15 +176,17 @@
 
 		<div class="col-1"></div>
 
-			<div class="col-10 text-center" onclick="leftButtonClickAnimation()">
+			<div class="col-10 text-center" onclick="leftButtonClickAnimation()"
+																			onmouseenter="leftButtonMouseEnterAnimation()"
+																			onmouseleave="leftButtonMouseLeaveAnimation()">
 
-				<div id="vote-button-left-text" class="justify-content-center" style="position:relative; bottom:0; left:0; z-index:20">	
+				<div id="vote-button-left-text" class="justify-content-center">	
 						<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
 				</div>
 				
-				<div id="vote-button-left-fill-bar" style="position:relative; bottom:100%; left:0; height:100%; width:5%; z-index:10"></div>
+				<div id="vote-button-left-fill-bar" style="width:0%"></div>
 				
-				<div class="vote-button-background" style="position:relative; bottom:200%; left:0; height:100%; width:100%; z-index=5"></div>
+				<div id="vote-button-left-background"></div>
 
 			</div>
 
@@ -135,6 +196,37 @@
 
 </div>
 <!-- -->
+
+<br>
+<br>
+
+<div class="container-fluid">
+	
+	<div class="row py-2">
+
+		<div class="col-1"></div>
+
+			<div class="col-10 text-center" onclick="rightButtonClickAnimation()"
+																			onmouseenter="rightButtonMouseEnterAnimation()"
+																			onmouseleave="rightButtonMouseLeaveAnimation()">
+
+				<div id="vote-button-right-text" class="justify-content-center">	
+						<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
+				</div>
+				
+				<div id="vote-button-right-fill-bar" style="width:0%"></div>
+				
+				<div id="vote-button-right-background"></div>
+
+			</div>
+
+		<div class="col-1"></div>
+
+	</div>
+
+</div>
+<!-- -->
+
 
 
 <div id="vote-button-left">
@@ -187,16 +279,31 @@
 			}
 		}
 	}
-	
-	
+
+
+
+	var leftButtonState = "none";
+	var rightButtonState = "none"; 
+
+	function resetLeftButtonState() {
+		leftButtonState = "none";
+		rightButtonState = "none";
+	}
+
+
 	function leftButtonClickAnimation() {
+	
+		if(leftButtonState == "click" || rightButtonState == "click")
+			return;
+		
 		var fillbar = document.getElementById("vote-button-left-fill-bar"); 
 		var text =  document.getElementById("vote-button-left-text");
 		  
 		text.style.color = "#ff0000";
-		  
+		leftButtonState = "click"; 
+
 		var width = parseInt(fillbar.style.width);
-		var id = setInterval(frame, 10);
+		var id = setInterval(frame, 8);
 	
 		function frame() {
 			if (width >= 100) {
@@ -207,39 +314,136 @@
 			}
 		}
 	}
+
+
+	function leftButtonMouseEnterAnimation() {
+
+		if(leftButtonState == "click" || rightButtonState == "click")
+			return;
+		
+		var fillbar = document.getElementById("vote-button-left-fill-bar"); 
+		var text =  document.getElementById("vote-button-left-text");
+		  
+		text.style.color = "#ff0000";
+		leftButtonState = "enter";	
+
+		var width = parseInt(fillbar.style.width);
+		var id = setInterval(frame, 8);
 	
-	
-	
-	function leftButtonClickAnimation1() {
-		var elem = document.getElementById("vote-button-left-fill-bar"); 
-		
-		console.log(elem);  
-		
-		var width = elem.style.width;
-		width.substring(0, width.length - 1);
-		
-		var id;
-		
 		function frame() {
-			console.log("width val: ", width);
+			if (width >= 100 || leftButtonState != "enter") {
+				clearInterval(id);
+			} else {
+				width++; 
+				fillbar.style.width = width + '%'; 
+			}
+		}
+	}
+
+
+	function leftButtonMouseLeaveAnimation() {
+
+		if(leftButtonState == "click" || rightButtonState == "click")
+			return;
+		
+		var fillbar = document.getElementById("vote-button-left-fill-bar"); 
+		var text =  document.getElementById("vote-button-left-text");
+		  
+		text.style.color = "#ffffff";
+		leftButtonState = "leave"; 
+
+		var width = parseInt(fillbar.style.width);
+		var id = setInterval(frame, 8);
+	
+		function frame() {
+			if (width == 0 || leftButtonState != "leave") {
+				clearInterval(id);
+			} else {
+				width--; 
+				fillbar.style.width = width + '%'; 
+			}
+		}
+	}
+
+	
+
+	function rightButtonClickAnimation() {
+	
+		if(leftButtonState == "click" || rightButtonState == "click")
+			return;
+		
+		var fillbar = document.getElementById("vote-button-right-fill-bar"); 
+		var text =  document.getElementById("vote-button-right-text");
+		  
+		text.style.color = "#ff0000";
+		rightButtonState = "click"; 
+
+		var width = parseInt(fillbar.style.width);
+		var id = setInterval(frame, 8);
+	
+		function frame() {
 			if (width >= 100) {
 				clearInterval(id);
 			} else {
 				width++; 
-				elem.style.width = width + '%'; 
-				console.log("width: ", width);
-				console.log("style.width: ", elem.style.width);
+				fillbar.style.width = width + '%'; 
 			}
 		}
-		
-		id = setInterval(frame, 10);
-		console.log("Start width: ", width);
-	
-		
 	}
+
+
+
+	function rightButtonMouseEnterAnimation() {
+
+		if(leftButtonState == "click" || rightButtonState == "click")
+			return;
+		
+		var fillbar = document.getElementById("vote-button-right-fill-bar"); 
+		var text =  document.getElementById("vote-button-right-text");
+		  
+		text.style.color = "#ff0000";
+		rightButtonState = "enter";	
+
+		var width = parseInt(fillbar.style.width);
+		var id = setInterval(frame, 8);
 	
+		function frame() {
+			if (width >= 100 || rightButtonState != "enter") {
+				clearInterval(id);
+			} else {
+				width++; 
+				fillbar.style.width = width + '%'; 
+			}
+		}
+	}
+
+
+	function rightButtonMouseLeaveAnimation() {
+
+		if(leftButtonState == "click" || rightButtonState == "click")
+			return;
+		
+		var fillbar = document.getElementById("vote-button-right-fill-bar"); 
+		var text =  document.getElementById("vote-button-right-text");
+		  
+		text.style.color = "#ffffff";
+		rightButtonState = "leave"; 
+
+		var width = parseInt(fillbar.style.width);
+		var id = setInterval(frame, 8);
 	
-	
+		function frame() {
+			if (width == 0 || rightButtonState != "leave") {
+				clearInterval(id);
+			} else {
+				width--; 
+				fillbar.style.width = width + '%'; 
+			}
+		}
+	}
+
+
+
 	
 </script>
 
