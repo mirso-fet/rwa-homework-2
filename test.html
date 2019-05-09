@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	</head>
+
+
+
+
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.vote-button-background {
+	width: 100%;
+	height: 100%;
+	background-color: #262626;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+#vote-button-left-text {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#vote-button-left-fill-bar {
+	width: 10%;
+	height: 100%;
+	background-color: rgba(46, 204, 113, 0.7);
+}
+
+
+.vote-btn-left {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+ 
+	height: 100%;
+	background: #262626;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  overflow: hidden;
+  
+}
+
+.vote-btn-left:hover, .vote-btn-left:focus, .vote-btn-left:active {
+	color: #ff0000;
+}
+
+
+
+.vote-btn-left:before {
+  content: '';
+	position: absolute;
+	top: 0;
+	left: -120%;
+	width: 110%;
+	height: 100%;
+	background: rgba(46, 204, 113, 0.7);
+	transition: 1.2s;
+}
+
+.vote-btn-left:hover:before, .vote-btn-left:focus:before, .vote-btn-left:active:before {
+  left: -5%;
+}
+
+.black-glossy-sfonts{
+	font-size: 2.1rem;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+<body>
+
+<h1>JavaScript Progress Bar</h1>
+
+<div id="myProgress">
+  <div id="myBar">10%</div>
+</div>
+
+<br>
+
+
+<div class="container-fluid">
+	
+	<div class="row py-2">
+
+		<div class="col-1"></div>
+
+			<div class="col-10 text-center" onclick="leftButtonClickAnimation()">
+
+				<div id="vote-button-left-text" class="justify-content-center" style="position:relative; bottom:0; left:0; z-index:20">	
+						<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
+				</div>
+				
+				<div id="vote-button-left-fill-bar" style="position:relative; bottom:100%; left:0; height:100%; width:5%; z-index:10"></div>
+				
+				<div class="vote-button-background" style="position:relative; bottom:200%; left:0; height:100%; width:100%; z-index=5"></div>
+
+			</div>
+
+		<div class="col-1"></div>
+
+	</div>
+
+</div>
+<!-- -->
+
+
+<div id="vote-button-left">
+  <div id="vote-button-left-fill-bar">VOTE-BTN</div>
+</div>
+
+
+
+
+<br>
+
+<!-- VOTE BTN LEFT -->	
+<div class="container-fluid">
+					<div class="row py-2">
+
+						<div class="col-1"></div>
+
+						<div class="col-10 text-center vote-btn-left">
+
+							<div class="row justify-content-center">
+								<div class="col-12">	
+									<span class="py-2 fas fa-heart black-glossy-sfonts"></span>
+								</div>	
+							</div>
+
+						</div>
+
+						<div class="col-1"></div>
+
+					</div>
+</div>
+<!-- -->
+
+<br>
+<button onclick="leftButtonClickAnimation()">Click Me</button> 
+
+<script>
+	function move() {
+		var elem = document.getElementById("vote-button-left-fill-bar");   
+		var width = 10;
+		var id = setInterval(frame, 10);
+	
+		function frame() {
+			if (width >= 100) {
+				clearInterval(id);
+			} else {
+				width++; 
+				elem.style.width = width + '%'; 
+				elem.innerHTML = width * 1  + '%';
+			}
+		}
+	}
+	
+	
+	function leftButtonClickAnimation() {
+		var fillbar = document.getElementById("vote-button-left-fill-bar"); 
+		var text =  document.getElementById("vote-button-left-text");
+		  
+		text.style.color = "#ff0000";
+		  
+		var width = parseInt(fillbar.style.width);
+		var id = setInterval(frame, 10);
+	
+		function frame() {
+			if (width >= 100) {
+				clearInterval(id);
+			} else {
+				width++; 
+				fillbar.style.width = width + '%'; 
+			}
+		}
+	}
+	
+	
+	
+	function leftButtonClickAnimation1() {
+		var elem = document.getElementById("vote-button-left-fill-bar"); 
+		
+		console.log(elem);  
+		
+		var width = elem.style.width;
+		width.substring(0, width.length - 1);
+		
+		var id;
+		
+		function frame() {
+			console.log("width val: ", width);
+			if (width >= 100) {
+				clearInterval(id);
+			} else {
+				width++; 
+				elem.style.width = width + '%'; 
+				console.log("width: ", width);
+				console.log("style.width: ", elem.style.width);
+			}
+		}
+		
+		id = setInterval(frame, 10);
+		console.log("Start width: ", width);
+	
+		
+	}
+	
+	
+	
+	
+</script>
+
+
+
+</body>
+</html>
