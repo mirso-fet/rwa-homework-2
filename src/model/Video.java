@@ -12,7 +12,10 @@ import javax.persistence.*;
 				query = "SELECT COUNT(v) FROM Video v"),
 	
 	@NamedQuery(name = "Video.getAll",
-				query = "SELECT v FROM Video v")
+				query = "SELECT v FROM Video v"),
+	
+	@NamedQuery(name = "Video.getAllByRank",
+				query = "SELECT v FROM Video v ORDER BY v.videoScore DESC")
 })
 public class Video {
 
@@ -33,16 +36,21 @@ public class Video {
 	@Column(name = "VIDEO_DISLIKES", nullable = false)
 	private Long videoDislikes;
 	
+	@Column(name = "VIDEO_SCORE", nullable = false)
+	private Double videoScore;
+	
 	
 	
 	
 	
 	public void positiveVote() {
 		++videoLikes;
+		updateVideoScore();
 	}
 		
 	public void negativeVote() {
 		++videoDislikes;
+		updateVideoScore();
 	}
 
 	public String getYoutubeID() {
@@ -60,6 +68,7 @@ public class Video {
 		videoYoutubeID = youtubeID;
 		videoLikes = posVote < 0 ? 0 : posVote;
 		videoDislikes = negVote < 0 ? 0 : negVote;
+		updateVideoScore();
 	}
 	
 	
@@ -69,5 +78,13 @@ public class Video {
 		videoDislikes = 0l;
 	}
 	
+	
+	private void updateVideoScore() {
+		Double pos = videoLikes.doubleValue();
+		Double neg = videoDislikes.doubleValue();
+		Double tot = pos + neg;
+		
+		videoScore = ((pos + 1.9208) / tot - 1.96 * Math.sqrt(((pos * neg) / tot +  0.9604) / tot / tot))/(1 + 3.8416 / tot);
+	}
 	
 }

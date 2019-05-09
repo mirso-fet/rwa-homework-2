@@ -251,15 +251,12 @@
 
 
 
-		<!-- START TOP 5 LIST -->
-		<div class="container py-5" id="top5">
-		<div class="row">
-		<div class="col-1 col-sm-0"></div>
-		<div class="col-10 col-sm-12">
 
 
-			<!-- 1 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
+
+
+		<!-- TEMPLATE ELEMENT START -->
+			<div class="row py-4 py-lg-5 invisible" id="top5-template">
 				<div class="col-12">
 				
 					<div class="row mb-n3" sytle="z-index: 100;">
@@ -272,12 +269,12 @@
 					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
 						<div class="col-3">	
 							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/S-sJp1FfG7Q/hqdefault.jpg"/>
+								<img class="round-video-img" src="https://img.youtube.com/vi/S-sJp1FfG7Q/hqdefault.jpg"/>
 							</div>
 						</div>
 						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
 							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
+								<div class="col-12 title">
 									Migos - Bad and Boujee ft Lil Uzi Vert [Official Video]
 								</div>
 							</div>
@@ -294,187 +291,26 @@
 
 				</div>
 			</div>
-			<!-- ELEMENT END -->
+			<!-- TEMPLATE ELEMENT END -->
 
 
 
 
-			<!-- 2 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">2</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/sRAkP9B1AJ4/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Vojko V - Kako To (OFFICIAL VIDEO)
-								</div>
-							</div>
-						</div>
-					</div>
-				
 
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
+		<!-- START TOP 5 LIST -->
+		<div class="container py-5" id="top5">
+			<div class="row">
+				<div class="col-1 col-sm-0"></div>
+		
+				<div class="col-10 col-sm-12">
 
+
+					<!--  PLACE WHERE DYNAMICLY WILL BE ADDED RANK LIST -->
+			
 				</div>
+				
+				<div class="col-1 col-sm-0"></div>
 			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-			<!-- 3 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">3</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/BQ0mxQXmLsk/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Camila Cabello - Havana (Official Music VIdeo) ft. Young Thug
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-			<!-- 4 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">4</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/nYh-n7EOtMA/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Sia - Cheap Thrills ft. Sean Paul (Lyric Video)
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-
-
-			<!-- 5 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">5</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/fKopy74weus/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Imagine Dragons - Thunder
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-
-
-
-		</div>
-		<div class="col-1 col-sm-0"></div>
-		</div>
 		</div>
 		<!-- END TOP 5 LIST -->
 

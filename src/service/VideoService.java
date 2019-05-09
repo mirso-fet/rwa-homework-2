@@ -202,6 +202,55 @@ public class VideoService {
 	
 	
 	
+	public static List<Video> getVideoByRanking(Integer startResult, Integer maxCount)
+	{
+		try {
+			   
+			EntityManager em = PersistenceContextHandler.getEMF().createEntityManager();
+		
+			TypedQuery<Video> getVideoByRankQuery = em.createNamedQuery("Video.getAllByRank", Video.class);
+			getVideoByRankQuery.setMaxResults(maxCount);
+			getVideoByRankQuery.setFirstResult(startResult);
+			List<Video> videoCount = getVideoByRankQuery.getResultList();
+		
+			em.close();
+			
+			return videoCount;
+		
+		} catch (Throwable t) {
+		    System.out.println("VideoService.getVideoByRanking()");
+		    throw t;
+		}
+		
+	}
+	
+	
+	
+	
+	public static Long getVideoCountDB()
+	{
+		try {
+	   
+			EntityManager em = PersistenceContextHandler.getEMF().createEntityManager();
+		
+			TypedQuery<Long> videoCountQuery = em.createNamedQuery("Video.getVideoCount", Long.class);
+			Long videoCount = videoCountQuery.getSingleResult();
+			
+			em.close();
+			
+			return videoCount;
+		
+		} catch (Throwable t) {
+		    System.out.println("VideoService.getNewPair()");
+		    throw t;
+		}
+		
+	}
+	
+
+	
+	
+	
 	
 	
 	

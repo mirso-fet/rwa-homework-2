@@ -153,6 +153,7 @@ function loadScript(url, callback)
 		 gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() {
 			 //getVideoInfo(videoIDsList);
 			 getNewVideoPair();
+			 generateTOP5List();
 		 });
 	  
 	 }
@@ -179,6 +180,7 @@ function loadScript(url, callback)
 		 gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() {
 			 //getVideoInfo(videoIDsList);
 			 getVideoPair(firstVideoYTID, secondVideoYTID);
+			 generateTOP5List();
 		 });
 	  
 	 }
@@ -481,9 +483,87 @@ function loadScript(url, callback)
 			rotateBtn.classList.toggle("activeSpin");
 		
 		}
+	
 		
+		 function getVideoInfo(videoIDs) {
+			 
+			 var idParams = "";
+			 var retValue = [];
+
+			 for(var id in videoIDs)	
+				 idParams += videoIDs[id] + ','; 
+
+			 idParams = idParams.substring(0, idParams.length - 1);
+			 
+			 console.log("YOUTUBE IDs: ", videoIDs);
+
+
+
+		    return gapi.client.youtube.videos.list({
+		    			"part": "snippet",
+		    			"id": idParams
+		    		})
+		    		.then(function(response) {
+		                
+		    			var items = response.result.items;
+
+		    			items.forEach(function(elem){
+		    				retValue.push({id: elem.id, title: elem.snippet.localized.title});
+		    			});
+		    			
+		    			return retValue;
+
+		              },
+		              function(err) { console.error("Execute error", err); });
+		  }
 
 	 
+		
+		function generateTOP5List() {
+			
+			 URL = "http://localhost:8080/RWA_HOMEWORK_2/GetVideoByRating?startPosition=0&maxVideoCount=5";
+
+			 fetchJSONFile(URL, function(data) {
+				 
+				 var top5ListTemplate = document.getElementById("top5-template");
+				 var top5List = document.getElementById("top5");
+				 var arrayLength = data.length;
+				 
+				 var videoYTIDs = [];
+				 
+				 for(var i = 0 ; i < arrayLength; ++i)
+				{
+					 var video = data[i];
+					 
+					 videoYTIDs.push(video.videoYoutubeID);
+					 console.log(video.videoYoutubeID);
+				}
+					 
+				 var videoInfo = getVideoInfo(videoYTIDs);
+				 
+				 console.log("VIDEO INFO: ", videoInfo);
+				 
+				 for (var i = 0; i < arrayLength; i++) 
+				 {
+					 var video = data[i];
+					 var newTopListItem = top5ListTemplate.cloneNode("true");
+					 
+					 newTopListItem.classList.remove("invisible");
+					 
+					 newTopListItem.getElementsByClassName("title")[0].textContent = "TITLE";
+					 
+					 newTopListItem.getElementsByClassName("round-video-img")[0].setAttribute("src", "https://img.youtube.com/vi/" + video.videoYoutubeID + "/hqdefault.jpg");
+					 
+					 newTopListItem.getElementsByClassName("black-glossy-video-stat")[0].textContent = video.videoLikes + "/" + video.videoDislikes;
+		
+					 newTopListItem.getElementsByClassName("black-glossy-rank")[0].textContent = i + 1;
+					 
+					 top5List.appendChild(newTopListItem);
+				 }
+			 });
+		}
+			
+
 	 
 	 
 
