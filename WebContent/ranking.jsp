@@ -111,17 +111,8 @@
 
 
 
-
-
-		<!-- START TOP 5 LIST -->
-		<div class="container p1-2 pb-4 pt-md-3 pb-md-5" id="rankings">
-		<div class="row">
-		<div class="col-1 col-sm-0"></div>
-		<div class="col-10 col-sm-12">
-
-
-			<!-- 1 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
+				<!-- TEMPLATE ELEMENT START -->
+				<div class="row py-4 py-lg-5 notdisplay" id="ranking-template">
 				<div class="col-12">
 				
 					<div class="row mb-n3" sytle="z-index: 100;">
@@ -134,12 +125,12 @@
 					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
 						<div class="col-3">	
 							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/S-sJp1FfG7Q/hqdefault.jpg"/>
+								<img class="round-video-img" src="https://img.youtube.com/vi/S-sJp1FfG7Q/hqdefault.jpg"/>
 							</div>
 						</div>
 						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
 							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
+								<div class="col-12 title">
 									Migos - Bad and Boujee ft Lil Uzi Vert [Official Video]
 								</div>
 							</div>
@@ -149,406 +140,63 @@
 
 					<div class="row my-n4" sytle="z-index: 100;">
 						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
+						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0"
+					 																	state = "none"
+					 																	rating = "90"
+					 																	width = "0"
+																						onmouseenter="videoStatEnterAnimation(this)"
+																						onmouseleave="videoStatLeaveAnimation(this)">
+
+							<div class="row" style="margin: -5px; padding: 5px;">
+								<div class="col-12 text-center black-glossy-video-stat-padding video-stat-text">
+									0/0
+						 		</div>
+								<div class="col-12 black-glossy-video-stat-padding black-glossy-video-stat-left-bar" style="width:0%; left: -3%"></div>
+								<div class="col-12 black-glossy-video-stat-padding black-glossy-video-stat-right-bar" style="width:0%; left: 103%;"></div>
+				
+							</div>
+						
+						</div>
 						<div class="col-3"></div>
 					</div>
 	
 
 				</div>
 			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-			<!-- 2 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">2</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/sRAkP9B1AJ4/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Vojko V - Kako To (OFFICIAL VIDEO)
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-			<!-- 3 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">3</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/BQ0mxQXmLsk/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Camila Cabello - Havana (Official Music VIdeo) ft. Young Thug
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-			<!-- 4 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">4</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/nYh-n7EOtMA/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Sia - Cheap Thrills ft. Sean Paul (Lyric Video)
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-
-
-			<!-- 5 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">5</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/fKopy74weus/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Imagine Dragons - Thunder
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-			<!-- 6 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">6</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/lWA2pjMjpBs/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Rihanna - Diamonds
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-			<!-- 7 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">7</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/e-ORhEE9VVg/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Taylor Swift - Blank Space
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-
-
-
-
-			<!-- 8 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">8</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/0HDdjwpPM3Y/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Jessie J, Ariana Grande, Nicki Minaj - Bang Bang ft. Ariana Grande, Nicki Minaj
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-
-
-
-			<!-- 9 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">9</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/7wtfhZwyrcc/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Imagine Dragons - Believer
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-			<!-- 10 ELEMENT START -->
-			<div class="row py-4 py-lg-5" >
-				<div class="col-12">
-				
-					<div class="row mb-n3" sytle="z-index: 100;">
-						<div class="col-5"></div>
-						<div class="col-2 black-glossy-rank text-center">10</div>
-						<div class="col-5"></div>
-					</div>
-	
-					
-					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
-						<div class="col-3">	
-							<div class="circle-img-div">
-								<img src="https://img.youtube.com/vi/YVkUvmDQ3HY/hqdefault.jpg"/>
-							</div>
-						</div>
-						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
-							<div class="row black-glossy-title min-height-35 align-middle">
-								<div class="col-12">
-									Eminem - Without Me
-								</div>
-							</div>
-						</div>
-					</div>
-				
-
-					<div class="row my-n4" sytle="z-index: 100;">
-						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
-						<div class="col-3"></div>
-					</div>
-	
-
-				</div>
-			</div>
-			<!-- ELEMENT END -->
-
-
-
-
-
-
-
-
+			<!-- TEMPLATE ELEMENT END -->
+
+
+
+
+
+		<!-- START RANKING LIST -->
+		<div class="container p1-2 pb-4 pt-md-3 pb-md-5">
+		<div class="row">
+		<div class="col-1 col-sm-0"></div>
+		<div class="col-10 col-sm-12" id="rankingList"
+		<% 
+	 			String pageNumber = request.getParameter("pageNumber");
+	 			
+	 			if(pageNumber == null)
+	 			{
+	 				out.println("pageNumber=\"1\"");	
+	 			}
+	 			else
+	 			{
+	 				try{
+	 					Integer pn = Integer.parseInt(pageNumber);
+	 					out.println("pageNumner=\"" + pn + "\"");
+	 				}
+	 				catch(Exception e)
+	 				{
+	 					out.println("pageNumber=\"1\"");
+	 				}
+	 			}
+	 		%>
+	 	>
+
+
+			<!--  THERE WILL BE ELEMENTS -->
 
 
 
@@ -600,6 +248,17 @@
 				<div class="col-3"></div>
 			</div>
 		</div>
+		
+		<!-- MY JAVASCRIPT-->
+    	<script type="text/javascript" src="communication.js"></script>
+    	<script type="text/javascript" src="animation.js"></script>
+
+
+	 	<!-- GOOGLE API JAVASCRIPT -->
+	 	<script async defer src="https://apis.google.com/js/api.js" 
+	 		onload="this.onload=function(){};handleClientRankingLoad()"
+	 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  		</script> 
 
 
 	</body>

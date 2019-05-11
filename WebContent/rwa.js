@@ -16,7 +16,7 @@ function loadScript(url, callback)
 }
 
 	
-	var APIkey = "AIzaSyD-8Rv2NLpVsceAHSQ7kwwV3oAzDUNkUlA";
+var APIkey = "AIzaSyD-8Rv2NLpVsceAHSQ7kwwV3oAzDUNkUlA";
 	
 	var videoList = [ { id: "S-sJp1FfG7Q", rank: "1" },
 					  { id: "HPs5SPWtXmo", rank: "2" }
@@ -657,15 +657,11 @@ function loadScript(url, callback)
 						this_element.setAttribute("width", width);
 						leftFillBar.style.width = (width * rating / 100 + 3) + '%';
 						rightFillBar.style.width = (width * (100 - rating) / 100 + 3) + '%';
-						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + 3) + '%'; 
+						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + (3 * (100 - width) / 100) ) + '%'; 
 					}
 				}
 
 
 			}
 
-
-
-	 
-	 
 

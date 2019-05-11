@@ -317,11 +317,11 @@
 
 
 		<!-- START TOP 5 LIST -->
-		<div class="container py-5" id="top5">
+		<div class="container py-5">
 			<div class="row">
 				<div class="col-1 col-sm-0"></div>
 		
-				<div class="col-10 col-sm-12">
+				<div class="col-10 col-sm-12" id="top5">
 
 
 					<!--  PLACE WHERE DYNAMICLY WILL BE ADDED RANK LIST -->
@@ -348,7 +348,8 @@
 		</div>
 
 		<!-- MY JAVASCRIPT-->
-    	<script type="text/javascript" src="rwa.js"></script>
+    	<script type="text/javascript" src="communication.js"></script>
+    	<script type="text/javascript" src="animation.js"></script>
 
 
 	 	<!-- GOOGLE API JAVASCRIPT -->
@@ -358,10 +359,9 @@
 	 			String secondVideoYTID = request.getParameter("secondVideoID");
 	 			
 	 			if(firstVideoYTID == null || secondVideoYTID == null)
-	 				out.println("onload=\"this.onload=function(){};handleClientLoadNewPair()\"");
+	 				out.println("onload=\"this.onload=function(){};handleClientLoadNewVideoPair()\""); //handleClientLoadNewVideoPair
 	 			else
-	 				//out.println("onload=\"this.onload=function(){};handleClientLoadOldPair(" + firstVideoYTID + "," + secondVideoYTID + ")\"");
-	 				out.println("onload=\"this.onload=function(){};handleClientLoadOldPair(\'" + firstVideoYTID + "\',\'" + secondVideoYTID + "\')\"");
+	 				out.println("onload=\"this.onload=function(){};handleClientLoadOldVideoPair(\'" + firstVideoYTID + "\',\'" + secondVideoYTID + "\')\"");
 	 		%>
 	 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
   		</script> 
