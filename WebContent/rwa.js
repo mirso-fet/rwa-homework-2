@@ -554,16 +554,20 @@ function loadScript(url, callback)
 							 return element.id == video.videoYoutubeID;  
 						 }).title;
 						 
+						 console.log("Video: ", video);
 						 
 						 var newTopListItem = top5ListTemplate.cloneNode("true");
 						 
 						 newTopListItem.classList.remove("notdisplay");
 						 
+						
+						 newTopListItem.getElementsByClassName("black-glossy-video-stat")[0].setAttribute("rating", Math.round(video.videoScore * 100));
+						 
 						 newTopListItem.getElementsByClassName("title")[0].textContent = title;//title;
 						 
 						 newTopListItem.getElementsByClassName("round-video-img")[0].setAttribute("src", "https://img.youtube.com/vi/" + video.videoYoutubeID + "/hqdefault.jpg");
 						 
-						 newTopListItem.getElementsByClassName("black-glossy-video-stat")[0].textContent = video.videoLikes + "/" + video.videoDislikes;
+						 newTopListItem.getElementsByClassName("video-stat-text")[0].textContent = video.videoLikes + "/" + video.videoDislikes;
 			
 						 newTopListItem.getElementsByClassName("black-glossy-rank")[0].textContent = i + 1;
 						 
@@ -577,6 +581,87 @@ function loadScript(url, callback)
 			 });
 		}
 			
+
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+
+			function videoStatEnterAnimation(this_element) {
+				var state = this_element.getAttribute("state");
+				var rating = this_element.getAttribute("rating");
+				
+				console.log("State: ", state);
+				console.log("Rating: ", rating )
+				
+				var leftFillBar = this_element.getElementsByClassName("black-glossy-video-stat-left-bar")[0];
+				var rightFillBar = this_element.getElementsByClassName("black-glossy-video-stat-right-bar")[0];
+		 
+				this_element.setAttribute("state", "enter");
+			
+				var leftFillBarWidth = parseInt(leftFillBar.style.width);
+				var rightFillBarWidth = parseInt(rightFillBar.style.width);
+
+				var width = leftFillBarWidth;
+
+				var id = setInterval(frame, 6);
+			
+				function frame() {
+					if (width > 100 || this_element.getAttribute("state") != "enter") {
+						clearInterval(id);
+					} else {
+						width++; 
+						leftFillBar.style.width = (width * rating / 100 + 1) + '%';
+						rightFillBar.style.width = (width * (100 - rating) / 100 + 1) + '%';
+						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + 1) + '%'; 
+					}
+				}
+
+			}
+
+
+
+			function videoStatLeaveAnimation(this_element) {
+				var state = this_element.getAttribute("state");
+				var rating = this_element.getAttribute("rating");
+		 
+
+				console.log("State: ", state);
+				console.log("Rating: ", rating )
+
+				var leftFillBar = this_element.getElementsByClassName("black-glossy-video-stat-left-bar")[0];
+				var rightFillBar = this_element.getElementsByClassName("black-glossy-video-stat-right-bar")[0];
+		 
+				this_element.setAttribute("state", "leave");
+			
+				var leftFillBarWidth = parseInt(leftFillBar.style.width);
+				var rightFillBarWidth = parseInt(rightFillBar.style.width);
+
+
+				var width = leftFillBarWidth;
+				
+				var id = setInterval(frame, 8);
+			
+				function frame() {
+					if (width < 0 || this_element.getAttribute("state") != "leave") {
+						clearInterval(id);
+					} else {
+						width--; 
+						leftFillBar.style.width = width * rating / 100 + '%';
+						rightFillBar.style.width = (width * (100 - rating) / 100 + 1) + '%';
+						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + 1) + '%'; 
+					}
+				}
+
+
+			}
+
+
 
 	 
 	 
