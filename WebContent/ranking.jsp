@@ -232,7 +232,7 @@
   						<ul class="pagination justify-content-center"
   							startPage="1">
     						
-    						<li class="page-item disabled" id="startPageBtn">
+    						<li class="page-item disabled" id="startPageBtn" onclick="firstPage()">
     							<a class="page-link">
 									<i class="fas fa-fast-backward"></i>
 								</a>
@@ -248,11 +248,11 @@
 					
    			
     			
-    						<li class="page-item active" id="pg1"><a class="page-link">1</a></li>
-    						<li class="page-item" id="pg2"><a class="page-link">2</a></li>
-    						<li class="page-item" id="pg3"><a class="page-link">3</a></li>
-    						<li class="page-item" id="pg4"><a class="page-link">4</a></li>
-    						<li class="page-item" id="pg5"><a class="page-link">5</a></li>
+    						<li class="page-item active" id="pg1" onclick="thisPage(this)"><a class="page-link">1</a></li>
+    						<li class="page-item" id="pg2" onclick="thisPage(this)"><a class="page-link">2</a></li>
+    						<li class="page-item" id="pg3" onclick="thisPage(this)"><a class="page-link">3</a></li>
+    						<li class="page-item" id="pg4" onclick="thisPage(this)"><a class="page-link">4</a></li>
+    						<li class="page-item" id="pg5" onclick="thisPage(this)"><a class="page-link">5</a></li>
     						
     						
     						<li class="page-item" id="nextPageBtn" onclick="nextPage()">
@@ -261,7 +261,7 @@
 								</a>
     						
     			
-    						<li class="page-item" id="lastPageBtn">
+    						<li class="page-item" id="lastPageBtn" onclick="lastPage()">
     							<a class="page-link">
 									<i class="fas fa-fast-forward"></i>
     							</a>
