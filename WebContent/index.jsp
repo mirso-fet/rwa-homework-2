@@ -287,6 +287,7 @@
 						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0"
 					 																	state = "none"
 					 																	rating = "90"
+					 																	width = "0"
 																						onmouseenter="videoStatEnterAnimation(this)"
 																						onmouseleave="videoStatLeaveAnimation(this)">
 
@@ -294,8 +295,8 @@
 								<div class="col-12 text-center black-glossy-video-stat-padding video-stat-text">
 									0/0
 						 		</div>
-								<div class="col-12 black-glossy-video-stat-padding black-glossy-video-stat-left-bar" style="width:0%; left: -1%"></div>
-								<div class="col-12 black-glossy-video-stat-padding black-glossy-video-stat-right-bar" style="width:0%; left: 101%;"></div>
+								<div class="col-12 black-glossy-video-stat-padding black-glossy-video-stat-left-bar" style="width:0%; left: -3%"></div>
+								<div class="col-12 black-glossy-video-stat-padding black-glossy-video-stat-right-bar" style="width:0%; left: 103%;"></div>
 				
 							</div>
 						

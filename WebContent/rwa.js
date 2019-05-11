@@ -596,13 +596,13 @@ function loadScript(url, callback)
 				var state = this_element.getAttribute("state");
 				var rating = this_element.getAttribute("rating");
 				
-				console.log("State: ", state);
-				console.log("Rating: ", rating )
-				
 				var leftFillBar = this_element.getElementsByClassName("black-glossy-video-stat-left-bar")[0];
 				var rightFillBar = this_element.getElementsByClassName("black-glossy-video-stat-right-bar")[0];
 		 
 				this_element.setAttribute("state", "enter");
+				
+				console.log("State: ", state);
+				console.log("Rating: ", rating )
 			
 				var leftFillBarWidth = parseInt(leftFillBar.style.width);
 				var rightFillBarWidth = parseInt(rightFillBar.style.width);
@@ -612,13 +612,15 @@ function loadScript(url, callback)
 				var id = setInterval(frame, 6);
 			
 				function frame() {
-					if (width > 100 || this_element.getAttribute("state") != "enter") {
+					if (this_element.getAttribute("width") > 100 || this_element.getAttribute("state") != "enter") {
 						clearInterval(id);
 					} else {
-						width++; 
-						leftFillBar.style.width = (width * rating / 100 + 1) + '%';
-						rightFillBar.style.width = (width * (100 - rating) / 100 + 1) + '%';
-						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + 1) + '%'; 
+						var width = this_element.getAttribute("width");
+						width++;
+						this_element.setAttribute("width", width);
+						leftFillBar.style.width = (width * rating / 100 + 3) + '%';
+						rightFillBar.style.width = (width * (100 - rating) / 100 + 3) + '%';
+						rightFillBar.style.left = (100 - width * (100 - rating) / 100) + '%'; 
 					}
 				}
 
@@ -629,32 +631,33 @@ function loadScript(url, callback)
 			function videoStatLeaveAnimation(this_element) {
 				var state = this_element.getAttribute("state");
 				var rating = this_element.getAttribute("rating");
-		 
 
-				console.log("State: ", state);
-				console.log("Rating: ", rating )
-
+				
 				var leftFillBar = this_element.getElementsByClassName("black-glossy-video-stat-left-bar")[0];
 				var rightFillBar = this_element.getElementsByClassName("black-glossy-video-stat-right-bar")[0];
 		 
 				this_element.setAttribute("state", "leave");
+				
+				console.log("State: ", state);
+				console.log("Rating: ", rating )
+				console.log("Width: ", this_element.getAttribute("width"));
 			
 				var leftFillBarWidth = parseInt(leftFillBar.style.width);
 				var rightFillBarWidth = parseInt(rightFillBar.style.width);
 
-
-				var width = leftFillBarWidth;
 				
 				var id = setInterval(frame, 8);
 			
 				function frame() {
-					if (width < 0 || this_element.getAttribute("state") != "leave") {
+					if (this_element.getAttribute("width") < 0 || this_element.getAttribute("state") != "leave") {
 						clearInterval(id);
 					} else {
-						width--; 
-						leftFillBar.style.width = width * rating / 100 + '%';
-						rightFillBar.style.width = (width * (100 - rating) / 100 + 1) + '%';
-						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + 1) + '%'; 
+						var width = this_element.getAttribute("width");
+						width--;
+						this_element.setAttribute("width", width);
+						leftFillBar.style.width = (width * rating / 100 + 3) + '%';
+						rightFillBar.style.width = (width * (100 - rating) / 100 + 3) + '%';
+						rightFillBar.style.left = (100 - width * (100 - rating) / 100 + 3) + '%'; 
 					}
 				}
 
