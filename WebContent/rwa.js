@@ -485,7 +485,7 @@ function loadScript(url, callback)
 		}
 	
 		
-		 function getVideoInfo(videoIDs) {
+	 function getVideoInfo(videoIDs) {
 			 
 			 var idParams = "";
 			 var retValue = [];
@@ -517,9 +517,10 @@ function loadScript(url, callback)
 		              function(err) { console.error("Execute error", err); });
 		  }
 
+
 	 
 		
-		function generateTOP5List() {
+		 function generateTOP5List() {
 			
 			 URL = "http://localhost:8080/RWA_HOMEWORK_2/GetVideoByRating?startPosition=0&maxVideoCount=5";
 
@@ -538,28 +539,41 @@ function loadScript(url, callback)
 					 videoYTIDs.push(video.videoYoutubeID);
 					 console.log(video.videoYoutubeID);
 				}
-					 
-				 var videoInfo = getVideoInfo(videoYTIDs);
 				 
-				 console.log("VIDEO INFO: ", videoInfo);
-				 
-				 for (var i = 0; i < arrayLength; i++) 
-				 {
-					 var video = data[i];
-					 var newTopListItem = top5ListTemplate.cloneNode("true");
+				 getVideoInfo(videoYTIDs).then(function(result) {
 					 
-					 newTopListItem.classList.remove("invisible");
 					 
-					 newTopListItem.getElementsByClassName("title")[0].textContent = "TITLE";
+					 var videoInfo = result;
 					 
-					 newTopListItem.getElementsByClassName("round-video-img")[0].setAttribute("src", "https://img.youtube.com/vi/" + video.videoYoutubeID + "/hqdefault.jpg");
+					 for (var i = 0; i < arrayLength; i++) 
+					 {
+						 var video = data[i];
+						 
+						 var title = videoInfo.find(function(element) {
+							 console.log("Find element: ", element);
+							 return element.id == video.videoYoutubeID;  
+						 }).title;
+						 
+						 
+						 var newTopListItem = top5ListTemplate.cloneNode("true");
+						 
+						 newTopListItem.classList.remove("notdisplay");
+						 
+						 newTopListItem.getElementsByClassName("title")[0].textContent = title;//title;
+						 
+						 newTopListItem.getElementsByClassName("round-video-img")[0].setAttribute("src", "https://img.youtube.com/vi/" + video.videoYoutubeID + "/hqdefault.jpg");
+						 
+						 newTopListItem.getElementsByClassName("black-glossy-video-stat")[0].textContent = video.videoLikes + "/" + video.videoDislikes;
+			
+						 newTopListItem.getElementsByClassName("black-glossy-rank")[0].textContent = i + 1;
+						 
+						 top5List.appendChild(newTopListItem);
+					 }
 					 
-					 newTopListItem.getElementsByClassName("black-glossy-video-stat")[0].textContent = video.videoLikes + "/" + video.videoDislikes;
-		
-					 newTopListItem.getElementsByClassName("black-glossy-rank")[0].textContent = i + 1;
 					 
-					 top5List.appendChild(newTopListItem);
-				 }
+					 
+					 
+				 });;
 			 });
 		}
 			

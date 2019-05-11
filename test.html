@@ -151,6 +151,190 @@
 
 
 
+
+
+.black-glossy-rank {
+		display: inline-block;
+		vertical-align: middle;
+
+		position: relative;
+		z-index: 10;
+
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 30px;
+		background: #303030;
+		letter-spacing: 1px;
+		font-size: 24px;
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		border-radius: 60px;
+		box-shadow: inset 0 0 30px rgba(10, 10, 10,0.8);
+		padding: 5px;
+		margin: -5px;
+	}
+
+
+
+.black-glossy {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+ 
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 60px;
+	background: #262626;
+	letter-spacing: 6px;
+	font-size: 24px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: verdana;
+	border-radius: 130px;
+	border: 4px solid #000;
+	box-shadow: inset 0 0 30px rgba(0,0,0,1);
+  	overflow: hidden;
+  
+}
+
+
+
+.black-glossy:before {
+   content: '';
+	position: absolute;
+	top: 0;
+	left: -10%;
+	width: 80%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	transition: .5s;
+	transform: skewX(-15deg);
+}
+
+.black-glossy:hover:before, .black-glossy:focus:before, .black-glossy:active:before {
+  left: 130%;
+}
+
+.black-glossy:after {
+  content: '';
+	position: absolute;
+	top: 0;
+	left: -25%;
+	width: 80%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	transition: .5s;
+	transform: skewX(-15deg);
+}
+
+.black-glossy:hover:after, .black-glossy:focus:after, .black-glossy:active:after {
+  left: 130%;
+}
+
+
+
+div.circle-img-div{
+		height:200px;
+		width:200px;
+		overflow:hidden;
+		border-radius:50%;
+	}
+	
+	.circle-img-div img{
+		-webkit-transform: scale(0.8, 0.8) translate(-50%,-25%);
+		-ms-transform: scale(0.8, 0.8) translate(-50%,-25%);
+		 transform: scale(0.8, 0.8) translate(-50%,-25%);
+		
+		margin-left:100px;
+	}
+
+
+.black-glossy-title{
+		line-height: 40px;
+		letter-spacing: 1px;
+		font-size: 24px;
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	.black-glossy-video-stat {
+		display: inline-block;
+		vertical-align: middle;
+
+		position: relative;
+		z-index: 10;
+
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 30px;
+		background: #303030;
+		letter-spacing: 1px;
+		font-size: 24px;
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		border-radius: 60px;
+		box-shadow: inset 0 0 30px rgba(10, 10, 10,0.8);
+		padding: 5px;
+		margin: -5px;
+		overflow: hidden;
+	}
+
+	
+
+.black-glossy-video-stat:before {
+   content: '';
+	position: absolute;
+	top: 0;
+	left: -101%;
+	width: 100%;
+	height: 100%;
+	background: rgba(30, 230, 80, 1);
+	transition: .5s;
+	transform: skewX(-15deg);
+}
+
+.black-glossy-video-stat:hover:before, .black-glossy-video-stat:focus:before, .black-glossy-video-stat:active:before {
+  left: -30%;
+}
+
+.black-glossy-video-stat:after {
+  content: '';
+	position: absolute;
+	top: 0;
+	left: 101%;
+	width: 100%;
+	height: 100%;
+	background: rgba(214, 48, 49, 1);
+	transition: .5s;
+	transform: skewX(-15deg);
+}
+
+.black-glossy-video-stat:hover:after, .black-glossy-video-stat:focus:after, .black-glossy-video-stat:active:after {
+  left: 70%;
+}
+
+
+
+
+
+	
+
+
+
 </style>
 
 
@@ -261,7 +445,58 @@
 <!-- -->
 
 <br>
-<button onclick="leftButtonClickAnimation()">Click Me</button> 
+
+
+
+<!-- TEMPLATE ELEMENT START -->
+			<div class="row py-4 py-lg-5 notdisplay" id="top5-template">
+				<div class="col-12">
+				
+					<div class="row mb-n3" sytle="z-index: 100;">
+						<div class="col-5"></div>
+						<div class="col-2 black-glossy-rank text-center">1</div>
+						<div class="col-5"></div>
+					</div>
+	
+					
+					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
+						<div class="col-3">	
+							<div class="circle-img-div">
+								<img class="round-video-img" src="https://img.youtube.com/vi/S-sJp1FfG7Q/hqdefault.jpg"/>
+							</div>
+						</div>
+						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
+							<div class="row black-glossy-title min-height-35 align-middle">
+								<div class="col-12 title">
+									Migos - Bad and Boujee ft Lil Uzi Vert [Official Video]
+								</div>
+							</div>
+						</div>
+					</div>
+				
+
+					<div class="row my-n4" sytle="z-index: 100;">
+						<div class="col-3"></div>
+						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
+						<div class="col-3"></div>
+					</div>
+	
+
+				</div>
+			</div>
+			<!-- TEMPLATE ELEMENT END -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
 	function move() {

@@ -256,7 +256,7 @@
 
 
 		<!-- TEMPLATE ELEMENT START -->
-			<div class="row py-4 py-lg-5 invisible" id="top5-template">
+			<div class="row py-4 py-lg-5 notdisplay" id="top5-template">
 				<div class="col-12">
 				
 					<div class="row mb-n3" sytle="z-index: 100;">
