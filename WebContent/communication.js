@@ -74,7 +74,13 @@ function generateTOP5List() {
  
  
  
- 
+function clearRankingList() {
+	var rankingList = document.getElementById("rankingList");
+
+	while (rankingList.firstChild) {
+		rankingList.removeChild(rankingList.firstChild);
+	}
+}
  
  
  

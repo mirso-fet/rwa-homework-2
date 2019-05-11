@@ -229,16 +229,17 @@
 					<!-- PAGINATION -->
 					<nav>
   
-  						<ul class="pagination justify-content-center">
+  						<ul class="pagination justify-content-center"
+  							startPage="1">
     						
-    						<li class="page-item disabled">
+    						<li class="page-item disabled" id="startPageBtn">
     							<a class="page-link">
 									<i class="fas fa-fast-backward"></i>
 								</a>
 							</li>
 							
 							
-							<li class="page-item disabled">
+							<li class="page-item disabled" id="prevPageBtn" onclick="prevPage()">
     							<a class="page-link">
 									<i class="fas fa-step-backward"></i>
 								</a>
@@ -247,20 +248,20 @@
 					
    			
     			
-    						<li class="page-item active"><a class="page-link">1</a></li>
-    						<li class="page-item"><a class="page-link">2</a></li>
-    						<li class="page-item"><a class="page-link">3</a></li>
-    						<li class="page-item"><a class="page-link">4</a></li>
-    						<li class="page-item"><a class="page-link">5</a></li>
+    						<li class="page-item active" id="pg1"><a class="page-link">1</a></li>
+    						<li class="page-item" id="pg2"><a class="page-link">2</a></li>
+    						<li class="page-item" id="pg3"><a class="page-link">3</a></li>
+    						<li class="page-item" id="pg4"><a class="page-link">4</a></li>
+    						<li class="page-item" id="pg5"><a class="page-link">5</a></li>
     						
     						
-    						<li class="page-item">
+    						<li class="page-item" id="nextPageBtn" onclick="nextPage()">
     							<a class="page-link">
 									<i class="fas fa-step-forward"></i>
 								</a>
     						
     			
-    						<li class="page-item">
+    						<li class="page-item" id="lastPageBtn">
     							<a class="page-link">
 									<i class="fas fa-fast-forward"></i>
     							</a>

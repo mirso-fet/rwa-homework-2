@@ -362,3 +362,132 @@ function rotateRefreshBtn() {
 	rotateBtn.classList.toggle("activeSpin");
 
 }
+
+
+
+
+
+
+
+function handlePaginationMove(pageNumber, maxPageNumber) {
+	
+	document.getElementById("prevPageBtn").classList.remove("disabled");
+	document.getElementById("startPageBtn").classList.remove("disabled");
+	document.getElementById("nextPageBtn").classList.remove("disabled");
+	document.getElementById("lastPageBtn").classList.remove("disabled");
+	
+	if(pageNumber == 1)
+	{	
+		document.getElementById("prevPageBtn").classList.add("disabled");
+		document.getElementById("startPageBtn").classList.add("disabled");
+	}
+	
+	if(pageNumber == maxPageNumber)
+	{
+		document.getElementById("nextPageBtn").classList.add("disabled");
+		document.getElementById("lastPageBtn").classList.add("disabled");
+	}
+	
+	
+	if(pageNumber < 3)
+	{
+		for(var i = 1; i < 6; ++i)
+		{
+			var elem = document.getElementById("pg" + i);
+				elem.childNodes[0].innerHTML = i;
+				elem.classList.remove("active");
+		}
+		
+		document.getElementById("pg" + pageNumber).classList.add("active");
+	}
+	else if(pageNumber > maxPageNumber - 3)
+	{
+		for(var i = 1; i < 6; ++i)
+		{
+			var elem = document.getElementById("pg" + i);
+				elem.childNodes[0].innerHTML = maxPageNumber - 5 + i;
+				elem.classList.remove("active");
+		}
+		
+		document.getElementById("pg" + (5 + pageNumber - maxPageNumber)).classList.add("active");
+	}
+	else
+	{
+		for(var i = 1; i < 6; ++i)
+		{
+			var elem = document.getElementById("pg" + i);
+				elem.childNodes[0].innerHTML = pageNumber - 3 + i;
+				elem.classList.remove("active");
+		}
+		
+		document.getElementById("pg3").classList.add("active");
+	}
+	
+	clearRankingList();
+	generateRankingList();
+}
+
+
+
+
+
+function nextPage() {
+
+	var pagination = document.getElementsByClassName("pagination")[0];
+	var rankingList = document.getElementById("rankingList");
+	var pageNumber = rankingList.getAttribute("pageNumber");
+	var paginationPageNumber = pagination.getAttribute("startPage");
+	var maxPageNumber = 10;
+	
+	
+	if(pageNumber < maxPageNumber)
+	{
+		pageNumber++;
+		rankingList.setAttribute("pageNumber", pageNumber);
+	}
+	else
+	{
+		return;
+	}
+	
+	
+	
+	console.log("pageNumber: ", pageNumber);
+	console.log("paginationPageNumber:", paginationPageNumber);
+	console.log("maxPageNumber: ", maxPageNumber);
+	
+	handlePaginationMove(pageNumber, maxPageNumber);
+	
+	
+}
+
+function prevPage() {
+
+	var pagination = document.getElementsByClassName("pagination")[0];
+	var rankingList = document.getElementById("rankingList");
+	var pageNumber = rankingList.getAttribute("pageNumber");
+	var paginationPageNumber = pagination.getAttribute("startPage");
+	var maxPageNumber = 10;
+	
+	
+	if(pageNumber > 1)
+	{
+		pageNumber--;
+		rankingList.setAttribute("pageNumber", pageNumber);
+	}
+	else
+	{
+		return;
+	}
+	
+	
+	
+	console.log("pageNumber: ", pageNumber);
+	console.log("paginationPageNumber:", paginationPageNumber);
+	console.log("maxPageNumber: ", maxPageNumber);
+	
+	handlePaginationMove(pageNumber, maxPageNumber);
+	
+	
+}
+
