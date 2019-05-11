@@ -120,7 +120,7 @@ function generateTOP5List() {
 							 
 					newRankingListItem.getElementsByClassName("video-stat-text")[0].textContent = video.videoLikes + "/" + video.videoDislikes;
 				
-					newRankingListItem.getElementsByClassName("black-glossy-rank")[0].textContent = i + 1;
+					newRankingListItem.getElementsByClassName("black-glossy-rank")[0].textContent = (pageNumber-1) * 10 + i + 1;
 							 
 					rankingList.appendChild(newRankingListItem);
 				}						 

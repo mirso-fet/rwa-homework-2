@@ -20,11 +20,12 @@
 		<!-- My CSS style -->
 		<link rel="stylesheet" href="rwa.css">
 
-		<!--
+		
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		-->
+		
+	
 
 		<title>VVC</title>
 
@@ -185,7 +186,7 @@
 	 			{
 	 				try{
 	 					Integer pn = Integer.parseInt(pageNumber);
-	 					out.println("pageNumner=\"" + pn + "\"");
+	 					out.println("pageNumber=\"" + pn + "\"");
 	 				}
 	 				catch(Exception e)
 	 				{
@@ -208,23 +209,76 @@
 
 
 
+
+
+		<!-- PAGINATION MY -->
 		<div class="container-fluid">
 			<div class="row justify-content-center pt-2 pt-md-3 pt-lg-4 pb-3 pb-md-4 pb-lg-5">
 
 				<div class="col-1"></div>
 
 				<div class="col-2 col-md-1">
+					<!--  
 					<a href="#rankings" class="black-font">
 						<span class="fas fa-arrow-left fa-fs"></span>
 					</a>
+					-->
 				</div>
 
-				<div class="col-6 col-md-8"></div>
+				<div class="col-6 col-md-8">
+					<!-- PAGINATION -->
+					<nav>
+  
+  						<ul class="pagination justify-content-center">
+    						
+    						<li class="page-item disabled">
+    							<a class="page-link">
+									<i class="fas fa-fast-backward"></i>
+								</a>
+							</li>
+							
+							
+							<li class="page-item disabled">
+    							<a class="page-link">
+									<i class="fas fa-step-backward"></i>
+								</a>
+							</li>
+							
+					
+   			
+    			
+    						<li class="page-item active"><a class="page-link">1</a></li>
+    						<li class="page-item"><a class="page-link">2</a></li>
+    						<li class="page-item"><a class="page-link">3</a></li>
+    						<li class="page-item"><a class="page-link">4</a></li>
+    						<li class="page-item"><a class="page-link">5</a></li>
+    						
+    						
+    						<li class="page-item">
+    							<a class="page-link">
+									<i class="fas fa-step-forward"></i>
+								</a>
+    						
+    			
+    						<li class="page-item">
+    							<a class="page-link">
+									<i class="fas fa-fast-forward"></i>
+    							</a>
+    						</li>
+ 		 				
+ 		 				</ul>
+					</nav>
+					<!-- END PAGINATION -->
+				
+				
+				</div>
 
 				<div class="col-2 col-md-1">
+					<!-- 
 					<a href="#rankings" class="black-font">
 						<span class="fas fa-arrow-right fa-fs"></span>
 					</a>
+					-->
 				</div>
 
 				<div class="col-1"></div>
@@ -232,8 +286,10 @@
 			</div>
 
 		</div>
-
-
+		<!-- END MY PAGINATION -->
+		
+		
+		
 
 
 

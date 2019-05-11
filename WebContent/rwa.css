@@ -1283,3 +1283,49 @@ div .circle-img-div2{
 
 }
 
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #000;
+  background: transparent;
+  border: 1px solid transparent;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  letter-spacing: 0.075em;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.page-item.active .page-link:hover {
+	color: #ff0000;
+}
+ 
+ .page-item .page-link:hover,
+ .page-item .page-link:focus,
+ .page-item .page-link:active{
+	background-color: #ff0000;
+	border: 1px solid #ff0000;
+	color: #ffffff;
+}
+ 
+ 
+ 
+.page-item.disabled .page-link {
+  color: #262626;
+  pointer-events: none;
+  cursor: auto;
+  background-color: transparent;
+  border-color: transparent;
+}
+ 
+.page-item.active .page-link {
+ 
+  z-index: 1;
+  color: #fff;
+  background-color: #262626;
+  border: 1px solid #000;
+ 
+}
