@@ -54,11 +54,11 @@
 
 #vote-button-left-fill-bar {	
 	position:relative; 
-	bottom:100%; 
 	left:0; 
 	width: 0%;
 	height: 100%;
 	background-color: rgba(46, 204, 113, 0.7);
+	transform: skewX(-15deg);
 	z-index:10;
 }
 
@@ -72,13 +72,13 @@
 
 #vote-button-right-background {
 	position:relative; 
-	bottom:100%; 
+	bottom:161%; 
 	left:0; 
 	height:100%; 
 	width:100%; 
 	background-color: #262626;
 	box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-	z-index=5;
+	z-index:5;
 }
 
 #vote-button-right-text {
@@ -96,12 +96,12 @@
 
 #vote-button-right-fill-bar {
 	position:relative; 
-	bottom:100%; 
 	left:0; 
 	height:100%; 
 	display: block;
 	float: right;
-	background-color: rgba(46, 204, 113, 0.7);
+	background-color: rgba(200, 40, 40, 0.7);
+	transform: skewX(-15deg);
 	z-index:10;
 }
 
@@ -295,7 +295,7 @@ div.circle-img-div{
 
 	
 
-.black-glossy-video-stat:before {
+.black-glossy-video-stat1:before {
    content: '';
 	position: absolute;
 	top: 0;
@@ -307,11 +307,11 @@ div.circle-img-div{
 	transform: skewX(-15deg);
 }
 
-.black-glossy-video-stat:hover:before, .black-glossy-video-stat:focus:before, .black-glossy-video-stat:active:before {
+.black-glossy-video-stat1:hover:before, .black-glossy-video-stat1:focus:before, .black-glossy-video-stat1:active:before {
   left: -30%;
 }
 
-.black-glossy-video-stat:after {
+.black-glossy-video-stat1:after {
   content: '';
 	position: absolute;
 	top: 0;
@@ -323,7 +323,7 @@ div.circle-img-div{
 	transform: skewX(-15deg);
 }
 
-.black-glossy-video-stat:hover:after, .black-glossy-video-stat:focus:after, .black-glossy-video-stat:active:after {
+.black-glossy-video-stat1:hover:after, .black-glossy-video-stat1:focus:after, .black-glossy-video-stat1:active:after {
   left: 70%;
 }
 
@@ -477,7 +477,30 @@ div.circle-img-div{
 
 					<div class="row my-n4" sytle="z-index: 100;">
 						<div class="col-3"></div>
-						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">20k/13k</div>
+						<div class="col-6">
+							
+							<div class="row">
+								<div class="col-12 mt-2 mt-sm-1 mt-md-1 mt-lg-0 text-center">
+									<!--  START -->
+						
+						
+
+									<div class="black-glossy-video-stat" id="vote-button-right-text" class="justify-content-center">
+										20k/13k	
+										<!--  <span class="py-2 fas fa-heart black-glossy-sfonts"></span> -->
+									</div>
+				
+									<div class="black-glossy-video-stat" id="vote-button-right-fill-bar" style="width:10%"></div>
+				
+									<div class="black-glossy-video-stat"  id="vote-button-right-background"></div>
+							
+									<!-- END -->
+	
+								</div>
+							</div>
+										
+						</div>
+						
 						<div class="col-3"></div>
 					</div>
 	
@@ -491,6 +514,53 @@ div.circle-img-div{
 
 
 
+<br>
+<br>
+	<div class="row py-4 py-lg-5 notdisplay" id="top5-template">
+				<div class="col-12">
+				
+					<div class="row mb-n3" sytle="z-index: 100;">
+						<div class="col-5"></div>
+						<div class="col-2 black-glossy-rank text-center">1</div>
+						<div class="col-5"></div>
+					</div>
+	
+					
+					<div class="row d-flex black-glossy py-3 py-md-1_5 py-lg-2 title-margin">
+						<div class="col-3">	
+							<div class="circle-img-div">
+								<img class="round-video-img" src="https://img.youtube.com/vi/S-sJp1FfG7Q/hqdefault.jpg"/>
+							</div>
+						</div>
+						<div class="col-7 d-flex justify-content-center align-items-center my-n3">
+							<div class="row black-glossy-title min-height-35 align-middle">
+								<div class="col-12 title">
+									Migos - Bad and Boujee ft Lil Uzi Vert [Official Video]
+								</div>
+							</div>
+						</div>
+					</div>
+				
+
+					<div class="row my-n4" sytle="z-index: 100;">
+						<div class="col-3"></div>
+						<div class="col-6 black-glossy-video-stat mt-2 mt-sm-1 mt-md-1 mt-lg-0">
+							<div class="row" style="margin: -5px; padding: 5px;">
+								<div class="col-12 text-center" style="margin: -5px; padding: 5px;">
+									20k/13k
+						 		</div>
+								<div class="col-12" id="vote-button-left-fill-bar" style="margin: -5px; padding: 5px; width:75%; height:100%; position:absolute;"></div>
+								<div class="col-12" id="vote-button-right-fill-bar" style="margin: -5px; padding: 5px; width:26%; height:100%; position:absolute; left: 75%"></div>
+				
+							</div>
+						
+						</div>
+						<div class="col-3"></div>
+					</div>
+	
+
+				</div>
+			</div>
 
 
 
